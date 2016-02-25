@@ -89,6 +89,8 @@
 			},
 			bindHotkeys = function (hotKeys) {
 				$.each(hotKeys, function (hotkey, command) {
+					if(!command) return;
+					
 					editor.keydown(hotkey, function (e) {
 						if (editor.attr('contenteditable') && editor.is(':visible')) {
 							e.preventDefault();
